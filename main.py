@@ -3,7 +3,7 @@ from TTS.api import TTS
 import gradio as gr 
 
 device ="cuda" if torch.cuda.is_available() else "cpu"
-print("enter the text you want to transform")
+print("enter the text you want to transform:")
 text = str(input())
 
 def generate_audio(text):
@@ -16,5 +16,6 @@ demo = gr.Interface(
      inputs=[gr.Text(label="Text"),],
      outputs=[gr.Audio(label="Audio"),],
 )
+
 
 demo.launch()
